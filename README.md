@@ -23,4 +23,4 @@ sar/
 
 ## 🌐 Canlı Demo
 
-GitHub Pages üzerinde yayınlanan galeri: [https://chewieem.github.io/repo-adi](https://chewieem.github.io/repo-adi)
+GitHub Pages üzerinde yayınlanan galeri: [https://chewieem.github.io/sar-gallery](https://chewieem.github.io/sar-gallery)
