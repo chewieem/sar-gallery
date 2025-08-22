@@ -23,17 +23,4 @@ sar/
 
 ## 🌐 Canlı Demo
 
-GitHub Pages üzerinde yayınlanan galeri: [https://kullaniciadi.github.io/repo-adi](https://kullaniciadi.github.io/repo-adi)
-
-## 📱 Özellikler
-
-- Responsive tasarım
-- Desktop ve mobile görselleri ayrı bölümlerde
-- Modern ve temiz arayüz
-- Orijinal görsel boyutlarında gösterim
-
-## 🛠️ Teknolojiler
-
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
+GitHub Pages üzerinde yayınlanan galeri: [https://chewieem.github.io/repo-adi](https://chewieem.github.io/repo-adi)
