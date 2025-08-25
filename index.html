@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAR Görsel Galerisi</title>
+    <title>SAR - Anasayfa (Desktop)</title>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,192 +19,35 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #252525 0%, #232323 100%);
-            min-height: 100vh;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 100%;
             margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #bdffd3;
-            margin-bottom: 30px;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .section {
-            margin-bottom: 50px;
-            background: rgba(90, 90, 90, 0.8);
-            border-radius: 0;
-            padding: 30px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-        }
-
-        .section h2 {
-            color: #ffffff;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            text-align: center;
-            border-bottom: 2px solid #505050;
-            padding-bottom: 10px;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .image-card {
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid rgba(178, 178, 178, 0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-        }
-
-        .image-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            border-color: #ffffff;
-        }
-
-        .image-container {
+            padding: 0;
+            cursor: pointer;
             position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        .image-container img {
-            max-width: 100%;
+        .background-image {
+            width: 100%;
             height: auto;
             display: block;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
 
-
-        @media (max-width: 768px) {
-            .gallery {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .section {
-                padding: 20px;
-            }
-
-            .image-card {
-                max-width: 90%;
-            }
-        }
-
-        /* Mobile görselleri için özel stil */
-        #mobile-gallery {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #mobile-gallery .image-card {
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 500px;
-        }
-
-        .loading {
-            text-align: center;
-            color: #ffffff;
-            font-size: 1.2rem;
-            padding: 20px;
-        }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>SAR Web Site Görselleri</h1>
-        
-        <!-- Desktop Görselleri -->
-        <div class="section">
-            <h2>🖥️ Masaüstü Görselleri</h2>
-            <div class="gallery" id="desktop-gallery">
-                <div class="loading">Görseller yükleniyor...</div>
-            </div>
-        </div>
-
-        <!-- Mobile Görselleri -->
-        <div class="section">
-            <h2>📱 Mobile Görselleri</h2>
-            <div class="gallery" id="mobile-gallery">
-                <div class="loading">Görseller yükleniyor...</div>
-            </div>
-        </div>
-    </div>
+<body onclick="nextPage()">
+    <img src="desktop/Anasayfa 1440px (1).jpg" alt="Desktop Anasayfa" class="background-image">
 
     <script>
-        // Desktop görselleri
-        const desktopImages = [
-            { src: 'desktop/sar-1.jpg'},
-            { src: 'desktop/sar-2.jpg'},
-            { src: 'desktop/sar-4.jpg'},
-            { src: 'desktop/sar-3.jpg'}
-        ];
-
-        // Mobile görselleri
-        const mobileImages = [
-            { src: 'mobile/sar-5.jpg'},
-            { src: 'mobile/sar-6.jpg'},
-            { src: 'mobile/sar-7.jpg'},
-            { src: 'mobile/sar-8.jpg'},
-            { src: 'mobile/sar-9.jpg'},
-            { src: 'mobile/sar-10.jpg'},
-        ];
-
-        function createImageCard(image) {
-            return `
-                <div class="image-card">
-                    <div class="image-container">
-                        <img src="${image.src}" alt="SAR Görsel" loading="lazy">
-                    </div>
-                </div>
-            `;
+        function nextPage() {
+            window.location.href = 'desktop-urunler.html';
         }
 
-        function loadGallery(containerId, images) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = images.map(createImageCard).join('');
-        }
-
-        // Sayfa yüklendiğinde galerileri yükle
-        document.addEventListener('DOMContentLoaded', function() {
-            loadGallery('desktop-gallery', desktopImages);
-            loadGallery('mobile-gallery', mobileImages);
-        });
-
-        // Görsel yükleme hatalarını yakala
-        document.addEventListener('error', function(e) {
-            if (e.target.tagName === 'IMG') {
-                e.target.style.display = 'none';
-                e.target.parentElement.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #ff6b6b; font-size: 0.9rem;">Görsel yüklenemedi</div>';
+        // Klavye ile geçiş
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextPage();
             }
-        }, true);
+        });
     </script>
 </body>
 </html>

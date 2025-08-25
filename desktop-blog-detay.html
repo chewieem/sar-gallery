@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAR - Blog Detay (Desktop)</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .background-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+    </style>
+</head>
+<body onclick="nextPage()">
+    <img src="desktop/Blog Detay.jpg" alt="Desktop Blog Detay" class="background-image">
+
+    <script>
+        function nextPage() {
+            window.location.href = 'mobile-anasayfa.html';
+        }
+
+        // Klavye ile geçiş
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextPage();
+            }
+        });
+    </script>
+</body>
+</html>
